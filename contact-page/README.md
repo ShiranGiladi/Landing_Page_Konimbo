@@ -33,3 +33,24 @@
     npm run dev
 
 פתח את http://localhost:3000
+
+### 5. בנה לפרודקשן
+
+    npm run build
+    npm run start
+
+## מבנה הפרויקט
+
+    app/
+    ├── actions.js          ← Server Action — קריאה ל-Airtable
+    ├── layout.jsx          ← מעטפת גלובלית
+    ├── page.jsx            ← דף הבית
+    ├── globals.css         ← עיצוב גלובלי
+    └── components/
+        └── ContactForm.jsx ← קומפוננטת הטופס (Client)
+
+## אבטחה
+
+ה-API key של Airtable נמצא אך ורק בצד השרת (Server Action).
+הדפדפן של המשתמש לעולם לא רואה אותו.
+קובץ `.env.local` מוגן על ידי `.gitignore` ולא יועלה ל-GitHub.
