@@ -2,10 +2,10 @@ import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen">
       {/* right panel: contact info */}
       <aside
-        className="flex-1 flex items-center justify-center px-20 py-16"
+        className="flex-1 flex items-center justify-center px-8 py-16 md:px-20"
         style={{ background: "var(--ink)" }}
       >
         <div className="max-w-sm">
@@ -70,8 +70,8 @@ export default function Home() {
 
       {/* left panel: contact form */}
       <main
-        className="flex-1 flex items-center justify-center py-16"
-        style={{ background: "var(--surface)", padding: "3rem 2rem" }}
+        className="flex-1 flex items-center justify-center"
+        style={{ background: "var(--surface)", padding: "3rem 1.5rem" }}
       >
         <div
           style={{
