@@ -1,35 +1,35 @@
-# Contact Landing Page — Next.js
+# Contact Landing Page
 
-דף נחיתה של צור קשר בנוי עם Next.js, React, Tailwind CSS.
-נתוני הטופס נשלחים ל-Airtable דרך Server Action מאובטח.
+A contact landing page built with Next.js, React, and Tailwind CSS.
+Form submissions are sent to Airtable via a secure Server Action.
 
-## טכנולוגיות
+## Tech Stack
 
 - Next.js 15 (App Router)
 - React 19
 - Tailwind CSS v4
 - Airtable REST API
 
-## התקנה והרצה
+## Setup & Installation
 
-### 1. שכפל את הפרויקט
+### 1. Clone the repository
 
-    git clone <your-repo-url>
-    cd contact-page-next
+    git clone https://github.com/ShiranGiladi/Landing_Page_Konimbo.git
+    cd contact-page
 
-### 2. התקן תלויות
+### 2. Install dependencies
 
     npm install
 
-### 3. הגדר משתני סביבה
+### 3. Configure environment variables
 
-צור קובץ `.env.local` בתיקיית הבסיס:
+Create a `.env.local` file in the root directory:
 
     AIRTABLE_API_KEY=your_api_key_here
     AIRTABLE_BASE_ID=your_base_id_here
 
-### 4. הרץ לוקלית
+### 4. Run locally
 
     npm run dev
 
-פתח את http://localhost:3000
+Open http://localhost:3000
