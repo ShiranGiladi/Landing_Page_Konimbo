@@ -5,9 +5,9 @@ Form submissions are sent to Airtable via a secure Server Action.
 
 ## Tech Stack
 
-- Next.js 15 (App Router)
-- React 19
-- Tailwind CSS v4
+- Next.js
+- React
+- Tailwind CSS
 - Airtable REST API
 
 ## Setup & Installation
