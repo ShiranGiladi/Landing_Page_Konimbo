@@ -16,6 +16,13 @@ export async function submitContact(formData) {
     return { success: false, error: "All fields are required." };
   }
 
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    return { success: false, error: "Invalid email" };
+  }
+
   try {
     const res = await fetch(ENDPOINT, {
       method: "POST",
@@ -42,6 +49,7 @@ export async function submitContact(formData) {
 
     return { success: true };
   } catch (err) {
-    return { success: false, error: err.message };
+    console.error("Airtable submit error:", err);
+    return { success: false, error: "Failed to send message" };
   }
 }

@@ -20,14 +20,19 @@ export default function ContactForm() {
     setErrMsg("");
 
     const formData = new FormData(e.target);
-    const result = await submitContact(formData);
+    try {
+      const result = await submitContact(formData);
 
-    if (result.success) {
-      setStatus(STATUS.SUCCESS);
-      e.target.reset();
-    } else {
+      if (result.success) {
+        setStatus(STATUS.SUCCESS);
+        e.target.reset();
+      } else {
+        setStatus(STATUS.ERROR);
+        setErrMsg(result.error);
+      }
+    } catch {
       setStatus(STATUS.ERROR);
-      setErrMsg(result.error);
+      setErrMsg("שגיאה זמנית, נסה שוב");
     }
   }
 
@@ -59,7 +64,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => setStatus(STATUS.IDLE)}
-          className="rounded-lg font-semibold text-white transition-colors mt-4"
+          className="rounded-lg font-semibold text-white transition-colors mt-4 hover:opacity-90"
           style={{
             background: "var(--accent)",
             padding: "0.75rem 2rem",
@@ -190,7 +195,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="rounded-xl font-semibold text-white transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="rounded-xl font-semibold text-white transition-colors disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90"
           style={{
             background: "var(--accent)",
             fontFamily: "'DM Sans', sans-serif",
